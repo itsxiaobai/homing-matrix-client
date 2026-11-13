@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 批次二十一次：adaptive icon 背景層＝人類拍板之新 icon（
+     design/drawing_icon_revert.png，白底＋桃色環）之白底 #FFFFFF 全滿版
+     ——launch 遮罩（圓形／squircle）裁到哪都填滿，且與前景白底無縫相接。 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" />
+</shape>

@@ -1,0 +1,76 @@
+# 任務：Phase 0 / 0.11 — CI 授權檢查與依賴弱點掃描
+#
+# ⚠️ 驗證說明：倉庫尚未建立（任務 0.3），本 workflow 無法即時在 GitHub 上驗證執行；
+# 檔案先落庫，待 0.3 完成後以第一次 push 驗證（含本檔註解內各版本的 API 查證紀錄）。
+#
+# 查證基準日 2026-10-31（經 GitHub Releases API 查證之最新版）：
+# * actions/checkout          → v7.0.1（官方 Actions；https://api.github.com/repos/actions/checkout/releases/latest）
+# * subosito/flutter-action   → v2.23.0（第三方 Action，version pinned；供應鏈審查由人類負責。
+#   若不接受第三方 Action，可改為官方 stable 套件包安裝方式，待人工決定）
+# * google/osv-scanner        → v2.7.0，linux_amd64 binary（https://api.github.com/repos/google/osv-scanner/releases/latest）
+# * Flutter/dart 版本         → 3.47.9 / 3.13.7（與 app 開發環境一致；SDK 版本記錄見 DEPENDENCIES.md §規格基準版本）
+name: license-check-and-vulnerability-scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  analyze-test-license:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: subosito/flutter-action@v2.23.0
+        with:
+          flutter-version: 3.47.9
+          channel: stable
+          cache: true
+      - name: flutter pub get
+        run: flutter pub get
+      - name: flutter analyze
+        run: flutter analyze
+      - name: flutter test（不含需網路的整合測試）
+        run: >-
+          flutter test
+          test/homeserver_url_test.dart
+          test/auth_test.dart
+          test/connect_screen_widget_test.dart
+          test/login_screen_widget_test.dart
+          test/add_friend_screen_widget_test.dart
+          test/block_user_screen_widget_test.dart
+          test/device_verification_widget_test.dart
+          test/device_management_screen_widget_test.dart
+          test/message_filter_test.dart
+          test/message_search_screen_widget_test.dart
+          test/media_attach_screen_widget_test.dart
+          test/report_user_screen_widget_test.dart
+          test/crypto_bridge_unit_test.dart
+          test/group_chat_manage_screen_widget_test.dart
+          test/group_encrypted_screen_widget_test.dart
+          test/ui_smoke_test.dart
+          test/multi_device_login_screen_widget_test.dart
+          test/push_permission_screen_widget_test.dart
+          test/rooms_chat_screens_widget_test.dart
+          test/widget_test.dart
+          test/batch35_features_test.dart
+          test/missing_key_repair_test.dart
+          test/chat_screen_missing_key_test.dart
+          test/engine_init_test.dart
+      - name: license check（直接依賴須記錄於 DEPENDENCIES.md）
+        run: python3 ci/license_check.py
+
+  vulnerability-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: 下載 osv-scanner（版本鎖定，見檔首查證紀錄）
+        run: |
+          curl -sSfL -o osv-scanner \
+            https://github.com/google/osv-scanner/releases/download/v2.7.0/osv-scanner_linux_amd64 \
+            && chmod +x osv-scanner
+      - name: 掃描 pubspec.lock（osv）
+        run: ./osv-scanner --lockfile app/pubspec.lock
