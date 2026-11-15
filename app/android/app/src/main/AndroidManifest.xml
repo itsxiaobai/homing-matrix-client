@@ -1,0 +1,106 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- P2.15 通話（人類批准 2026-11-01）：麥克風＋攝影機權限（草案文字，待人類審閱）。
+         用途：一對一 Matrix VoIP 通話（SDK 官方 m.call.* ＋ flutter_webrtc）；
+         僅於使用者主動撥打／接聽時由 flutter_webrtc 取得裝置媒體。
+         註：安裝預設未授予；首次通話時由系統彈窗詢問（本批不內建權限前導說明頁）。 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 通話連線之基本網路能力（WebRTC P2P／TURN 中繼）。 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- flutter_webrtc 官方建議：避免同一進程多聲道衝突時的藍牙切換問題（草案）。 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <!-- 第十八批（人類批准 2026-11-07「是」）：Android 12+（API 31 起）藍牙改
+         runtime 權限必需——通話中列舉／選擇藍牙放音裝置（AudioSwitch）。
+         僅用於通話放音路由；不掃描、不配對。未授予時 sheet 僅列內建裝置＋提示。 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- 螢幕分享（P2.15b 7 項功能）：Android 10+ 需前景服務權限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <!-- 第三十二批（人類實測「最小化後麥克風和鏡頭斷開」根因修）：Android 平台
+         規則＝App 進背景後，攝影機／麥克風擷取須掛有 camera／microphone 型別之
+         前景服務。multi-type 见下方 service 宣告。 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <!-- Android 13+ 前景服務通知需要 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application
+        android:label="Homing"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            android:supportsPictureInPicture="true">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- 第 2 點：接收外部分享 → 選擇聊天室。
+                 第二十六批（人類拍板）：mime 統一 */*＋補 SEND_MULTIPLE（多檔）
+                 ——批十三 Dart 端只接 app_links 文字 uri，檔案 intent 落入
+                 MainActivity 無人消費；本批由 MainActivity `ring/share` channel
+                 整線（零新 OS 權限：intent 自帶讀取授權）。 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+      <!-- 螢幕分享前景服務（Android 14+ MediaProjection 需求；批次 II-j 補回） -->
+    <service
+        android:name=".ScreenCaptureForegroundService"
+        android:foregroundServiceType="mediaProjection"
+        android:exported="false" />
+      <!-- 通話前景服務（批次 II-h）；第三十二批改 multi-type（camera＋
+           microphone＋dataSync）：Android 14+ 進入背景後的擷取需對應型別，
+           否則攝影機／麥克風被系統停擷 → 對端看到卡住／聽不到。 -->
+    <service
+        android:name=".CallForegroundService"
+        android:foregroundServiceType="dataSync|camera|microphone"
+        android:exported="false" />
+    <!-- FCM 冷啟動通知（第四十一批）：App 被完全結束時由系統喚醒本 service，
+         貼一則**通用**通知（不含訊息內文；推播為 event_id_only）並帶回 App。
+         前台時不貼（交給既有本機通知流程，避免重複）。 -->
+    <service
+        android:name=".HomingFcmService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+  </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>
