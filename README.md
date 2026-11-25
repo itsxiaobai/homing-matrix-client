@@ -151,7 +151,7 @@ FCM 憑證可放在該倉庫的 secrets（`FCM_PROJECT_ID`／`FCM_API_KEY`／`FC
 
 ### 我的精神糧食（？
 
-就幾個喜歡的創作者。對，支持優質創作者也能幫忙專案運作，我就是不要臉 XD
+對，支持創作者也能幫忙專案運作，我就是不要臉 XD
 
 - 吾橋有水：[YT](https://www.youtube.com/channel/UCt-RcL1eeLqXC1UHDjDJCQQ) | [街聲 StreetVoice](https://streetvoice.com/FloodingBridge/)
 - 莊蕎嫣：[YT](https://www.youtube.com/channel/UCx0wtFhxZjLBaBAM0fooxfw) | [街聲 StreetVoice](https://streetvoice.com/rule1230/) | [抖內（歐付寶）](https://payment.opay.tw/Broadcaster/Donate/A3185B6772964C3EC1113C4EC8378553)
