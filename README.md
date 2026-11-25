@@ -137,8 +137,11 @@ FCM 憑證可放在該倉庫的 secrets（`FCM_PROJECT_ID`／`FCM_API_KEY`／`FC
 ### 軟硬體運作
 
 - [Matrix.org](https://matrix.org/)：整個軟體的通訊架構 ~~，沒有它就完蛋了~~。
-- [NCSE Network 社會公益計畫](https://ncse.tw/zh/csr/)：提供 VPS 作為 Matrix 伺服器和 CI/CD runner
-![logo - NCSE Network 字樣含尾翼](https://hackmd-prod-images.s3.ap-northeast-1.amazonaws.com/uploads/upload_95805ce6c5a96497491f21ab07f64b7d.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1795439802&Signature=FC9NfSqJF%2FMgaU7hZrijYMHdtj4%3D)
+- [NCSE Network 社會公益計畫](https://ncse.tw/zh/csr/)：提供 VPS 作為 Matrix 伺服器和 CI/CD runner  
+
+<a href="https://matrix.org/"><img src="https://matrix.org/images/matrix-logo-white.svg" alt="Matrix.org" width="180"></a>
+&emsp;
+<a href="https://ncse.tw/zh/csr/"><img src="https://cdn-file.ncse.tw/image/Logo_NCSE_Network_Banner.svg" alt="NCSE Network" width="180"></a>
 
 ### 好朋朋們
 
