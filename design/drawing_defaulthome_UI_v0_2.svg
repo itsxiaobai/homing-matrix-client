@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="360"
+   height="640"
+   viewBox="0 0 360 640"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="drawing_defaulthome_UI_v0_2.svg"
+   inkscape:export-filename="drawing_defaulthome_UI_v0_2.png"
+   inkscape:export-xdpi="400"
+   inkscape:export-ydpi="400"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.94019505"
+     inkscape:cx="161.66858"
+     inkscape:cy="321.20994"
+     inkscape:window-width="1368"
+     inkscape:window-height="843"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:pageshadow="2"
+     showgrid="false" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3441"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3439" />
+    </linearGradient>
+    <rect
+       x="63.327149"
+       y="39.113827"
+       width="78.227654"
+       height="22.971613"
+       id="rect26" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter23"
+       x="-0.091162424"
+       y="-0.75209054"
+       width="1.2005067"
+       height="2.6541812">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood22" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="12.534833"
+         id="feGaussianBlur22" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="6.000000"
+         dy="6.000000"
+         id="feOffset22" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite22" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite23" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter23-3"
+       x="-0.091162423"
+       y="-0.75209054"
+       width="1.2005067"
+       height="2.6541812">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood22-6" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="12.534833"
+         id="feGaussianBlur22-7" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="6.000000"
+         dy="6.000000"
+         id="feOffset22-5" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite22-3" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite23-5" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter13335"
+       x="-0.11071922"
+       y="-0.29090213"
+       width="1.2214384"
+       height="1.5818043">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood13325" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite13327" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="4"
+         result="blur"
+         id="feGaussianBlur13329" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset13331" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite13333" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="opacity:1;fill:#e6c8b8;fill-opacity:1;stroke-width:1.004;stroke-dasharray:none"
+       id="rect1"
+       width="360"
+       height="640"
+       x="0"
+       y="0"
+       inkscape:label="bg" />
+    <path
+       id="use5"
+       style="display:inline;opacity:0.779208;fill:#ececec;stroke-width:0.795;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;filter:url(#filter23)"
+       d="M 53.95401,589.95586 A 19.477005,19.955862 0 0 1 34.477005,609.91172 19.477005,19.955862 0 0 1 15,589.95586 19.477005,19.955862 0 0 1 34.477005,570 19.477005,19.955862 0 0 1 53.95401,589.95586 Z m 291.04598,4.3e-4 a 19.477005,19.955862 0 0 1 -19.47701,19.95586 19.477005,19.955862 0 0 1 -19.477,-19.95586 19.477005,19.955862 0 0 1 19.477,-19.95586 19.477005,19.955862 0 0 1 19.47701,19.95586 z M 33.69685,570.08825 h 292.15506 v 39.91172 H 33.69685 Z"
+       inkscape:label="menubg" />
+    <path
+       id="rect10278"
+       style="fill:#b2b2b2;fill-opacity:0.81;stroke-width:0.311106;filter:url(#filter13335)"
+       d="m 43.950142,573.10101 h 50 v 33 h -50 z m 16.497803,16.49921 a 16.5,16.5 0 0 1 -16.5,16.5 16.5,16.5 0 0 1 -16.5,-16.5 16.5,16.5 0 0 1 16.5,-16.5 16.5,16.5 0 0 1 16.5,16.5 z m 53.705815,6.1e-4 a 16.5,16.5 0 0 1 -16.500005,16.5 16.5,16.5 0 0 1 -16.5,-16.5 16.5,16.5 0 0 1 16.5,-16.5 16.5,16.5 0 0 1 16.500005,16.5 z"
+       inkscape:label="selected" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.5052px;writing-mode:lr-tb;direction:ltr;opacity:1;fill:#282828;fill-opacity:1;stroke-width:2.16839;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="59.002106"
+       y="615.54761"
+       id="text24"
+       transform="scale(1.0185998,0.98173983)"
+       inkscape:label="chatroommenutxt"><tspan
+         sodipodi:role="line"
+         id="tspan24"
+         x="59.002106"
+         y="615.54761"
+         style="stroke-width:2.16839">聊天室</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.5052px;writing-mode:lr-tb;direction:ltr;fill:#282828;fill-opacity:1;stroke-width:2.16839;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="137.50317"
+       y="615.52222"
+       id="text24-1"
+       transform="scale(1.0185998,0.98173983)"
+       inkscape:label="contactsmenutxt"><tspan
+         sodipodi:role="line"
+         x="137.50317"
+         y="615.52222"
+         style="stroke-width:2.16839"
+         id="tspan25">聯絡人</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.5052px;writing-mode:lr-tb;direction:ltr;fill:#282828;fill-opacity:1;stroke-width:2.16839;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="209.49026"
+       y="615.53491"
+       id="text24-1-6"
+       transform="scale(1.0185998,0.98173983)"
+       inkscape:label="callsmenutxt"><tspan
+         sodipodi:role="line"
+         x="209.49026"
+         y="615.53491"
+         style="stroke-width:2.16839"
+         id="tspan25-0">通話</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.5052px;writing-mode:lr-tb;direction:ltr;fill:#282828;fill-opacity:1;stroke-width:2.16839;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="278.18665"
+       y="615.54761"
+       id="text24-1-6-8"
+       transform="scale(1.0185998,0.98173983)"
+       inkscape:label="settingmenutxt"><tspan
+         sodipodi:role="line"
+         x="278.18665"
+         y="615.54761"
+         style="stroke-width:2.16839"
+         id="tspan25-0-7">設定</tspan></text>
+    <circle
+       style="opacity:1;fill:#ffb381;fill-opacity:1;stroke-width:3.85738;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path26"
+       cx="35"
+       cy="50"
+       r="15"
+       inkscape:label="avatar_icon" />
+    <text
+       xml:space="preserve"
+       id="text26"
+       style="writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect26);display:inline;opacity:1;fill:#ffb381;fill-opacity:1;stroke-width:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       inkscape:label="text26" />
+    <text
+       xml:space="preserve"
+       style="font-size:16.5226px;writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffb381;fill-opacity:1;stroke-width:5.50753;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="63.409969"
+       y="55.032234"
+       id="text27"
+       transform="scale(0.98253388,1.0177766)"
+       inkscape:label="chattitle"><tspan
+         sodipodi:role="line"
+         id="tspan27"
+         x="63.409969"
+         y="55.032234"
+         style="fill:#323232;fill-opacity:1;stroke-width:5.50753">聊天</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7892px;writing-mode:lr-tb;direction:ltr;fill:#ffb381;fill-opacity:1;stroke-width:4.26307;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="47.465683"
+       y="140.78017"
+       id="text27-3"
+       transform="scale(0.98253388,1.0177766)"
+       inkscape:label="spacetxt"><tspan
+         sodipodi:role="line"
+         id="tspan27-7"
+         x="47.465683"
+         y="140.78017"
+         style="fill:#323232;fill-opacity:1;stroke-width:4.26307">Spaces (0)</tspan></text>
+    <rect
+       style="opacity:1;fill:#e0c1ae;fill-opacity:1;stroke-width:4.04266;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect27"
+       width="300"
+       height="30"
+       x="30"
+       y="85"
+       inkscape:label="searchbar" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.6845px;writing-mode:lr-tb;direction:ltr;fill:#282828;fill-opacity:1;stroke-width:3.895;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="62.497158"
+       y="99.539314"
+       id="text24-3"
+       transform="scale(0.95327113,1.0490195)"
+       inkscape:label="searchchatroomtxt"><tspan
+         sodipodi:role="line"
+         id="tspan24-7"
+         x="62.497158"
+         y="99.539314"
+         style="fill:#525252;fill-opacity:1;stroke-width:3.895;stroke-miterlimit:4;stroke-dasharray:none">搜尋聊天室</tspan></text>
+    <path
+       style="opacity:1;fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1.04517;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="M 20,160.5225 H 340"
+       id="path28"
+       inkscape:label="divideline"
+       sodipodi:insensitive="true" />
+    <rect
+       style="opacity:1;fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect28"
+       width="21.540581"
+       height="20.343882"
+       x="296.54199"
+       y="90.709778"
+       inkscape:label="scan_pic" />
+    <rect
+       style="fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect28-9"
+       width="21.540581"
+       height="20.343882"
+       x="60.038105"
+       y="574.90375"
+       inkscape:label="chatroom_pic" />
+    <rect
+       style="fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect28-5"
+       width="21.540581"
+       height="20.343882"
+       x="138.69246"
+       y="575.51886"
+       inkscape:label="contact_pic" />
+    <rect
+       style="fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect28-0"
+       width="21.540581"
+       height="20.343882"
+       x="209.36566"
+       y="575.36566"
+       inkscape:label="calls_pic" />
+    <rect
+       style="fill:#525252;fill-opacity:1;stroke:#626262;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect28-6"
+       width="21.540581"
+       height="20.343882"
+       x="279.05774"
+       y="575.5"
+       inkscape:label="setting_pic" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#737373;stroke-width:0.605547;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 31.760147,132.26818 5.974125,5.97412 -6.288553,6.60298"
+       id="path29"
+       inkscape:label="space_arrow" />
+    <g
+       id="g31"
+       transform="translate(2.308556,14.446093)"
+       inkscape:label="add_friend">
+      <g
+         id="g30-8"
+         transform="rotate(90,288.36547,90.157374)"
+         style="fill:#808080;fill-opacity:1">
+        <path
+           style="opacity:1;fill:#595959;fill-opacity:1;stroke:#454545;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           d="m 274.76407,99.175252 17.85524,0.0738"
+           id="path30-4" />
+      </g>
+      <g
+         id="g30"
+         transform="translate(-4.381,-13.72856)"
+         style="fill:#808080;fill-opacity:1">
+        <path
+           style="opacity:1;fill:#595959;fill-opacity:1;stroke:#454545;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           d="m 274.76407,99.175252 17.85524,0.0738"
+           id="path30" />
+      </g>
+    </g>
+    <g
+       id="g3621"
+       transform="matrix(0.92538712,0,0,0.92538712,4.6116402,8.0503606)"
+       style="stroke:#282828;stroke-width:0.999582;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:label="search_icon">
+      <circle
+         style="fill:none;fill-opacity:0.979202;fill-rule:evenodd;stroke:#282828;stroke-width:0.999582;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path112"
+         cx="42.138668"
+         cy="97.888092"
+         r="7.5"
+         inkscape:label="circle" />
+      <path
+         style="fill:none;stroke:#282828;stroke-width:0.999582;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 47.182949,102.80913 6.558821,5.96759"
+         id="path1255"
+         inkscape:label="line" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.5185px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none"
+       x="26.714928"
+       y="58.937881"
+       id="text6488"
+       inkscape:label="avatar_word"><tspan
+         sodipodi:role="line"
+         id="tspan6486"
+         x="26.714928"
+         y="58.937881"
+         style="stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="writing-mode:lr-tb;direction:ltr;fill:#b2b2b2;fill-opacity:0.81;stroke:#454545;stroke-width:0.783;paint-order:stroke fill markers"
+       x="103.338"
+       y="360.548"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="103.338"
+         y="360.548"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Sans Mono CJK HK';-inkscape-font-specification:'Noto Sans Mono CJK HK';fill:#000000;fill-opacity:1;stroke:none">好像是時候跟朋友聊天了？</tspan></text>
+  </g>
+</svg>

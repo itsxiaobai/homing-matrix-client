@@ -1,0 +1,125 @@
+<!doctype html>
+<!--
+  第六十八批 b + B18 選項①：Homing UI 靜態原型（**暫定標準，人類可直接修改**）。
+  零依賴：直接用瀏覽器開本檔即可（不需 npm／build／伺服器）。
+  修改方式：改 styles.css 的 :root 色票／間距；改下方 HTML 的結構；改 app.js 的互動。
+  來源：LINE_ref/new_ref/（僅取配置與幾何，不匯入 LINE 圖片／logo／角色素材）。
+  正式視覺定稿仍是 UI_SPEC.md／DESIGN.md v2；本原型日後可回復。
+-->
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homing UI 原型（暫定）</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="switcher" aria-label="頁面切換">
+    <button type="button" data-page="chat" class="active">聊天室</button>
+    <button type="button" data-page="home">首頁</button>
+  </nav>
+
+  <!-- ══ 聊天室 ══ -->
+  <main id="chat" class="phone page active">
+    <header class="topbar">
+      <button class="icon-btn" aria-label="返回">‹</button>
+      <div class="room-title">307 (40)</div>
+      <button class="icon-btn" data-icon="clock" aria-label="通話紀錄">◷</button>
+      <button class="icon-btn" data-icon="phone" aria-label="通話">⌕</button>
+      <button class="icon-btn" data-icon="calendar" aria-label="日曆">▦</button>
+      <button class="icon-btn" data-icon="menu" aria-label="選單">☰</button>
+    </header>
+
+    <div class="messages">
+      <div class="pin-banner">@All 我現在會發英聽跟學測的二次校對單⋯ <span>⌄</span></div>
+
+      <div class="row incoming">
+        <div class="avatar">廷</div>
+        <div class="stack">
+          <div class="sender">廷</div>
+          <div class="bubble">下週考 L4 單字片語 <span class="tail"></span></div>
+        </div>
+        <div class="meta">17:21</div>
+      </div>
+
+      <div class="date-chip">Yesterday</div>
+
+      <div class="row incoming">
+        <div class="avatar">雁</div>
+        <div class="stack">
+          <div class="sender">雁</div>
+          <div class="bubble">@All 記得帶模擬考報名費 <span class="tail"></span></div>
+        </div>
+        <div class="meta">14:06</div>
+      </div>
+
+      <div class="row own">
+        <div class="stack">
+          <div class="bubble">收到！ <span class="tail"></span></div>
+          <div class="meta">17:05</div>
+        </div>
+      </div>
+
+      <div class="row incoming">
+        <div class="avatar">pdf</div>
+        <div class="stack">
+          <div class="file-card">
+            <div class="file-icon">▤</div>
+            <div>
+              <div class="file-name">翻譯練習題 P.11 12.pdf</div>
+              <div class="file-sub">Valid till: 8 Nov, 17:05</div>
+              <div class="file-sub">Size: 681 kB</div>
+            </div>
+          </div>
+        </div>
+        <div class="meta">17:05</div>
+      </div>
+    </div>
+
+    <footer class="inputbar">
+      <button class="icon-btn" aria-label="新增附件">＋</button>
+      <button class="icon-btn" aria-label="相機">▣</button>
+      <button class="icon-btn" aria-label="相簿">▧</button>
+      <div class="input-pill">輸入訊息… <span class="emoji">☺</span></div>
+      <button class="icon-btn" aria-label="語音訊息">🎤</button>
+    </footer>
+  </main>
+
+  <!-- ══ 首頁 ══ -->
+  <main id="home" class="phone page">
+    <header class="topbar">
+      <div class="avatar me">I</div>
+      <div class="pill">聊天室 <span>⌄</span></div>
+      <span class="spacer"></span>
+      <button class="icon-btn" data-icon="bell" aria-label="通知">♢</button>
+      <button class="icon-btn" data-icon="plus" aria-label="新增">＋</button>
+      <button class="icon-btn" data-icon="more" aria-label="更多">⋮</button>
+    </header>
+    <div class="search">⌕　搜尋　<span class="scan">⌗</span></div>
+    <div class="rooms">
+      <div class="room-row">
+        <div class="avatar">T</div>
+        <div class="room-main"><div class="room-name">Test in RING</div><div class="room-preview">Itsxiaobai: edit-B</div></div>
+        <div class="room-side"><div class="time">00:20</div></div>
+      </div>
+      <div class="room-row">
+        <div class="avatar">G</div>
+        <div class="room-main"><div class="room-name">GrapheneOS General</div><div class="room-preview">MaxLeit: Nevermind. I found⋯</div></div>
+        <div class="room-side"><div class="time">23:50</div><div class="badge">13</div></div>
+      </div>
+      <div class="room-row">
+        <div class="avatar">F</div>
+        <div class="room-main"><div class="room-name">Free Software Movement</div><div class="room-preview">kompowiecz 😌</div></div>
+        <div class="room-side"><div class="time">23:33</div><div class="badge">99+</div></div>
+      </div>
+    </div>
+    <footer class="bottomnav">
+      <div class="tab active">▢<span>聊天室</span></div>
+      <div class="tab">♙<span>聯絡人</span></div>
+      <div class="tab">⌕<span>通話</span></div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

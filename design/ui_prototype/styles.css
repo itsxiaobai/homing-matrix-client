@@ -1,0 +1,143 @@
+/*
+ * Homing UI 原型（暫定標準）— 人類可直接修改的色票／間距。
+ * 改 :root 即改全站；不需重新編譯 App。
+ * 正式定稿仍以 UI_SPEC.md／DESIGN.md v2 為準（日後可回復）。
+ */
+:root {
+  --bg: #111111;          /* 首頁底 */
+  --chat-bg: #1a1a1a;     /* 聊天室底 */
+  --bar: #1f1f1f;         /* 頂列／搜尋列 */
+  --bubble-in: #2a2a2a;   /* 他人泡泡 */
+  --bubble-out: #9de693;  /* 自己泡泡 */
+  --on-out: #111111;      /* 自己泡泡文字 */
+  --on-in: #ffffff;       /* 他人泡泡文字 */
+  --green: #4cc764;       /* 頂列膠囊／未讀徽章 */
+  --time: #8c8c8c;        /* 時間／次要字 */
+  --nav-bg: #0d0d0d;      /* 底列 */
+  --text: #ffffff;
+  --radius-bubble: 16px;
+  --radius-pill: 24px;
+  --icon-size: 24px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #000;
+  color: var(--text);
+  font-family: system-ui, "Noto Sans TC", sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+}
+.switcher { position: fixed; top: 8px; left: 8px; z-index: 9; }
+.switcher button {
+  background: var(--bar); color: var(--text); border: 1px solid #333;
+  border-radius: 16px; padding: 6px 14px; margin-right: 6px; cursor: pointer;
+}
+.switcher button.active { background: var(--green); color: #111; }
+
+.phone {
+  width: 390px; height: 844px; max-height: 100vh;
+  background: var(--chat-bg); border-radius: 24px; overflow: hidden;
+  display: none; flex-direction: column; border: 1px solid #333;
+}
+.phone.active { display: flex; }
+#home { background: var(--bg); }
+
+.topbar {
+  height: 56px; flex: none; background: var(--chat-bg);
+  display: flex; align-items: center; gap: 10px; padding: 0 12px;
+}
+#home .topbar { background: var(--bg); }
+.icon-btn {
+  width: var(--icon-size); height: var(--icon-size);
+  background: none; border: none; color: var(--text);
+  font-size: 22px; line-height: 1; cursor: pointer; padding: 0;
+}
+.room-title { flex: 1; font-weight: 600; font-size: 17px; }
+.pill {
+  background: var(--green); color: #fff; font-weight: 700;
+  border-radius: 20px; padding: 7px 14px; font-size: 16px;
+}
+.spacer { flex: 1; }
+
+.messages { flex: 1; overflow-y: auto; padding: 8px 10px; }
+.pin-banner {
+  background: var(--bar); border-radius: 8px; padding: 10px;
+  font-size: 13px; color: var(--time); display: flex; justify-content: space-between;
+}
+.date-chip {
+  margin: 12px auto; width: fit-content; background: #161616;
+  color: var(--time); font-size: 12px; border-radius: 12px; padding: 3px 10px;
+}
+.row { display: flex; gap: 8px; align-items: flex-end; margin: 10px 0; }
+.row.own { justify-content: flex-end; }
+.avatar {
+  width: 36px; height: 36px; flex: none; border-radius: 50%;
+  background: var(--bubble-in); display: grid; place-items: center;
+  font-size: 13px; color: var(--text);
+}
+.avatar.me { background: var(--green); color: #111; }
+.stack { display: flex; flex-direction: column; gap: 3px; max-width: 72%; }
+.sender { font-size: 12px; color: var(--time); }
+.bubble {
+  position: relative; background: var(--bubble-in); color: var(--on-in);
+  border-radius: var(--radius-bubble); padding: 9px 12px; font-size: 14px; line-height: 1.45;
+}
+.row.own .bubble { background: var(--bubble-out); color: var(--on-out); }
+/* LINE 泡泡尾巴（暫定） */
+.bubble .tail {
+  position: absolute; bottom: 7px; left: -5px;
+  border: 6px solid transparent; border-right-color: var(--bubble-in); border-left: 0;
+}
+.row.own .bubble .tail {
+  left: auto; right: -5px; bottom: 7px;
+  border: 6px solid transparent; border-left-color: var(--bubble-out); border-right: 0;
+}
+.meta { font-size: 11px; color: var(--time); flex: none; }
+.file-card {
+  display: flex; gap: 10px; align-items: center; background: var(--bubble-in);
+  border-radius: var(--radius-bubble); padding: 10px 12px; min-width: 230px;
+}
+.file-icon {
+  width: 42px; height: 42px; border-radius: 8px; background: #1a1a1a;
+  display: grid; place-items: center; color: #e8384f; font-size: 22px;
+}
+.file-name { font-size: 14px; }
+.file-sub { font-size: 11px; color: var(--time); margin-top: 2px; }
+
+.inputbar {
+  flex: none; background: var(--chat-bg); display: flex; align-items: center;
+  gap: 10px; padding: 10px 12px; border-top: 1px solid #222;
+}
+.input-pill {
+  flex: 1; background: var(--bubble-in); border-radius: var(--radius-pill);
+  padding: 10px 14px; color: var(--time); font-size: 14px;
+  display: flex; justify-content: space-between;
+}
+.emoji { font-size: 18px; }
+
+.search {
+  margin: 8px 12px; background: var(--bar); border-radius: var(--radius-pill);
+  padding: 10px 14px; color: var(--time); display: flex; justify-content: space-between;
+}
+.rooms { flex: 1; overflow-y: auto; }
+.room-row { display: flex; gap: 12px; align-items: center; padding: 10px 14px; }
+.room-main { flex: 1; min-width: 0; }
+.room-name { font-size: 16px; font-weight: 600; }
+.room-preview { font-size: 13px; color: var(--time); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 3px; }
+.room-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.time { font-size: 11px; color: var(--time); }
+.badge { background: var(--green); color: #fff; font-size: 11px; border-radius: 10px; padding: 1px 6px; }
+
+.bottomnav {
+  flex: none; background: var(--nav-bg); display: flex; padding: 8px 0 12px;
+}
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  gap: 2px; font-size: 22px; color: var(--time); cursor: pointer;
+}
+.tab span { font-size: 11px; }
+.tab.active { color: #fff; }

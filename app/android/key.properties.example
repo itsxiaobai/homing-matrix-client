@@ -1,0 +1,15 @@
+# 本機正式簽章設定範本（人類 2026-11-23 指示：金鑰放本機）
+#
+# 用法：
+#   1. 自己產生 keystore（例如 keytool -genkey -v -keystore ~/.android/homing-release.jks
+#      -alias homing -keyalg RSA -keysize 2048 -validity 10000）
+#   2. 複製本檔為 `key.properties`（同目錄；該檔已被 .gitignore 忽略）
+#   3. 填入本機路徑與密碼
+#
+# ⚠️ 不要把 key.properties 或 keystore 提交到版本庫，也不要上傳到 CI。
+#    兩者都只存在於你的本機。
+
+storeFile=/home/youruser/.android/homing-release.jks
+storePassword=CHANGE_ME
+keyAlias=homing
+keyPassword=CHANGE_ME

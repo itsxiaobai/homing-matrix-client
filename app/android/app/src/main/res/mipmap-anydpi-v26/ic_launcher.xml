@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 批次二十一次：人類 2026-11-08 拍板新 icon＝design/drawing_icon_revert.png
+     （白底＋桃色下半環，量測：白 89.0%、#FFBD9E 10.7%）。
+     背景＝白 #FFFFFF 全滿版（與前景白底相接，launch 遮罩圓形／squircle 裁到
+     哪都 seamless）；前景＝Ring 圖形縮入官方安全區（108dp 畫布中央 66dp 區
+     ＝61%）、底緣貼安全區下緣（保留「環從底部升起」的構圖）。
+     XML 由 @mipmap/ic_launcher 名稱自動生效，AndroidManifest 免改；
+     API 25- 仍用 mipmap-*/ic_launcher.png legacy 圖示（同輪已重生成）。 -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
+</adaptive-icon>

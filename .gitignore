@@ -1,0 +1,55 @@
+# --- Flutter / Dart ---
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# --- Android ---
+**/android/**.keystore
+**/android/**.jks
+**/android/local.properties
+**/android/.gradle/
+**/android/app/build/
+
+# --- iOS ---
+**/ios/.generated/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Runner/DerivedData/
+
+# --- IDEs ---
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# --- OS / Misc ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- Security / Secrets (CRITICAL) ---
+.env
+*.env
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+secrets.json
+**/secrets.json
+# 排除任何包含 gsk_ (Groq) 或其他 API Key 的臨時文件
+*gsk_*.txt
+*api_key*.txt
+
+# --- Project Specific ---
+# Firebase 憑證：只在本機／CI 建置時存在，绝不進版控（第八十五批）
+app/android/app/google-services.json
+
+# 如果有任何大型媒體測試檔，建議在此排除
+# app/test/assets/large_video.mp4
